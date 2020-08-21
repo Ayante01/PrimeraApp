@@ -16,5 +16,10 @@
     <string name="registered">Registrado</string>
     <string name="logged_in">Loggeado</string>
     <string name="no_match">No Coincide</string>
+    <string name="logout">Cerra Sesion</string>
+
+    <string name="task_name">Nombre de la tarea</string>
+    <string name="add">Agregar</string>
+    <string name="cancel">Cancelar</string>
 
 </resources>

@@ -1,22 +1,28 @@
 package cr.ac.ucr.primeraapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import cr.ac.ucr.primeraapp.utils.AppPreferences;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     // esta clase extiende  de AppCompartActivity lo que nos permitira usar metodo como los R., intent o finish
     private EditText etEmail;
     private EditText etPassword;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
 
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
@@ -55,6 +61,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             //Todo : enviarlo al main activity
             //Todo : almacenar en el storage el usuario
+
+            AppPreferences.getInstance(this).put(AppPreferences.Keys.IS_LOGGED_IN, true);
 
             Toast.makeText(this, R.string.logged_in, Toast.LENGTH_SHORT).show();
 
